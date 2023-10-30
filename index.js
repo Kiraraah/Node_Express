@@ -5,11 +5,10 @@ const app = express()
 
 const caminho = path.join(__dirname, "Templates")
 
-app.get('/', (requisição, resposta) => {
-    resposta.send("Estou funcionando com o express")
-    console.log(caminhoBAse)
+app.get('/', (requisicao, resposta) => {
+    resposta.sendFile(`${caminhoBase}/index.html`)
 })
 
 app.listen(3000, () => {
-    console.log("Servidor rodando na porta 3000")
+    console.log("Servidor rodando na porta 3000!")
 })
