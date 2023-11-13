@@ -5,8 +5,16 @@ const app = express()
 
 const caminho = path.join(__dirname, "templates")
 
-app.post('/cadastrar/salvar',(requisicao, resposta) => {
-    
+app.use(express.urlancode({
+    extended:true
+}))
+
+app.use(express.json())
+
+app.post('/cadastrar/salvar', (requisicao, resposta) => {
+   const nome = requisicao.body.nome
+   const email = requisicao.body.email
+   const senha = requisicao.body.senha
 })
 
 app.get('/cadastrar', (requisicao, resposta) => {
